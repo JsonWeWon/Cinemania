@@ -2,10 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cinemania - Team Json We Won</title>
-    <script type="module" crossorigin src="/Cinemania/index.js"></script>
+    <title>My Library</title>
     <link rel="stylesheet" crossorigin href="/Cinemania/assets/styles-BrGMzIye.css">
   </head>
   <body>
@@ -29,20 +28,26 @@
     <img src="../img/hero.png" alt="hero">
   </div>
 </section>
-
-      <section class="weekly">
+ 
+      <section class="category">
     <div class="container">
-        <h1>Weekly</h1>
-        <div>
-            <img src="../img/card.png" alt="">
-        </div>
+        <select name="category" id="category">
+            <option value="all">All</option>
+            <option value="action">Action</option>
+            <option value="comedy">Comedy</option>
+            <option value="drama">Drama</option>
+            <option value="horror">Horror</option>
+            <option value="romance">Romance</option>
+            <option value="thriller">Thriller</option>
+        </select>
     </div>
 </section>
-      <section class="upcoming">
+      <section class="library-list">
     <div class="container">
-        <h1>Upcoming</h1>
-        <div>
-            <img src="../img/hero-2.png" alt="">
+        <div class="card">
+            <div class="card-thumb">
+                <img src="../img/card.png" alt="card" />
+            </div>
         </div>
     </div>
 </section>
