@@ -1,21 +1,24 @@
-.footer {
-  padding: 20px 0;
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1280px) {
+
+    .footer p{
+        background-color: aqua;
+    }
 }
-.footer-desc {
-  text-align: center;
+
+
+
+/* Styles for Tablet devices */
+@media only screen and (min-width: 768px) {
+    .footer p{
+        background-color: aqua;
+    }
 }
-.footer-link {
-  position: relative;
-}
-.footer-link::before {
-  content: '';
-  position: absolute;
-  bottom: 6%;
-  left: 50%;
-  transform: translateX(-50%) skewX(-12deg);
-  z-index: -1;
-  width: 110%;
-  height: 24%;
-  background-color: #41d1ff;
-  transition: 200ms ease;
+
+/* Styles for Mobile devices */
+.footer p{
+    background-color: aqua;
+    margin: 32px auto;
+    height: 32px;
+    padding: 40px;
 }

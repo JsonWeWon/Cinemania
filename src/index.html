@@ -2,21 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
-    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Cinemania - Team Json We Won</title>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <load src="./partials/header.html" icon-path="img/sprite.svg#logo" />
+    <load src="./components/header.html" /> <!--icon-path="img/sprite.svg#logo"-->
 
     <main>
       <!-- Loads the specified .html file -->
-      <load src="./partials/vite-promo.html" />
-      <load src="./partials/badges.html" />
+      <load src="./components/hero.html" />
+      <load src="./components/weekly.html" />
+      <load src="./components/upcoming.html" />
     </main>
 
-    <load src="./partials/footer.html" />
+    <load src="./components/footer.html" />
+
+    <load src="./components/modal-details.html" />
+    <load src="./components/modal-trailer.html" />
+    <load src="./components/modal-team.html" />
 
     <script type="module" src="./main.js"></script>
   </body>

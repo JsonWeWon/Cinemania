@@ -1,0 +1,32 @@
+/**
+  |============================
+  | include css partials with
+  | default @import url()
+  |============================
+*/
+/* Common styles */
+@import url("../src/css/reset.css");
+@import url("../src/css/root.css");
+@import url("../src/css/header.css");
+@import url("../src/css/footer.css");
+
+/* Sections style */
+@import url('../src/css/hero.css');
+@import url('../src/css/library-list.css');
+@import url('../src/css/container.css');
+@import url('../src/css/modal-details.css');
+@import url('../src/css/modal-team.css');
+@import url('../src/css/modal-trailer.css');
+@import url('../src/css/search-input.css');
+@import url('../src/css/search-list.css');
+@import url('../src/css/category.css');
+@import url('../src/css/upcoming.css');
+@import url('../src/css/weekly.css');
+
+
+/* Pagination styles */
+@import url('../src/css/pagination.css');
+
+* {
+  margin: 40px 0;
+}

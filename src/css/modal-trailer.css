@@ -1,3 +1,4 @@
+
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1280px) {
     
@@ -8,21 +9,6 @@
 /* Styles for Tablet devices */
 @media only screen and (min-width: 768px) {
     
-    
 }
 
 /* Styles for Mobile devices */
-
-.navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-}
-
-header .container {
-
-    background-color: var(--secondary-bc-color);
-    color: var(--accent-color);
-}
-
-
