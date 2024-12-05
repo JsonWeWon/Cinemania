@@ -3,9 +3,17 @@ import { glob } from 'glob';
 import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
 import SortCss from 'postcss-sort-media-queries';
+import path from 'path';
 
 export default defineConfig(({ command }) => {
   return {
+    base: '/Cinemania/',
+    resolve: {
+      // alias'ı resolve içinde tanımlamanız gerekir
+      alias: {
+        '@': path.resolve(__dirname, './src'), // '@' işaretini 'src' klasörüne yönlendirdik
+      },
+    },
     define: {
       [command === 'serve' ? 'global' : '_global']: {},
     },
