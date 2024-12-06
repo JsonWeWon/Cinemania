@@ -1,18 +1,10 @@
 /* Geçici Root importu */
 @import url('./root.css');
 
-/* Styles for Desktop devices */
-@media only screen and (min-width: 1280px) {
-}
-
-/* Styles for Tablet devices */
-@media only screen and (min-width: 768px) {
-}
-
 /* Styles for Mobile devices */
-
 .hero > .container {
   display: flex;
+  padding: 0;
   /* margin: auto; */
   /* position: relative; */
   background-image: url('../img/hero-Mobile.png');
@@ -28,22 +20,30 @@
   flex-direction: column;
   justify-content: flex-start;
   gap: 0px;
-  margin: 20 40;
+  margin: 40px 0px 0px 20px;
   width: 242px;
 }
 .hero-h1 {
-  color: white;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--white);
+}
+
+.hero-rating-stars {
+  width: 96px;
+  height: 16px;
+  margin: 12px 0 0 0;
+  color: orange;
 }
 
 .hero-summary {
   font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--secondary-text);
   margin: 20px 0px;
-  color: white;
-}
-
-.hero-rating-stars {
-  margin: 12px 0px;
-  color: white;
+  width: 177px;
 }
 
 .hero-buttons {
@@ -51,12 +51,14 @@
   flex-direction: row;
   justify-content: space-between;
   gap: 8px;
-  margin: 0;
+  margin: 20px 0px 0px 0px;
   width: 242px;
   height: 38px;
 }
-.hero-button-watchTrailer {
-  font-family: var(--font-family);
+
+.hero-button-watchTrailer,
+.hero-button-moreDetails {
+  font-family: var(--main-font);
   font-weight: var(--font-weight-medium);
   font-size: 12px;
   text-align: center;
@@ -65,16 +67,13 @@
   border-radius: 24px;
   width: 117px;
   height: 38px;
+  margin: 0;
 }
 
-.hero-button-moreDetails {
-  font-family: var(--font-family);
-  font-weight: 500;
-  font-size: 12px;
-  text-align: center;
-  color: var(--background);
+/* Styles for Tablet devices */
+@media only screen and (min-width: 768px) {
+}
 
-  border-radius: 24px;
-  width: 117px;
-  height: 38px;
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1280px) {
 }
