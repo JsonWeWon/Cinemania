@@ -56,6 +56,17 @@
   height: 38px;
 }
 
+/* Button Styles */
+.hero-button-watchTrailer {
+  background: red;
+  transition: background 0.3s ease; /* Transition for background */
+}
+
+.hero-button-watchTrailer:hover {
+  background: blue;
+}
+
+
 .hero-button-watchTrailer,
 .hero-button-moreDetails {
   font-family: var(--main-font);
@@ -64,6 +75,7 @@
   text-align: center;
   color: var(--background);
 
+  border: 0px solid #fff;
   border-radius: 24px;
   width: 117px;
   height: 38px;
