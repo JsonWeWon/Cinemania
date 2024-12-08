@@ -1,29 +1,66 @@
 import axios from 'axios';
+//IMPORT API KEY FROM ENV (Bunu Calistiramadim SOnra Canliya Alirken Tekrardan Bakilacak) !
+// const API_KEY = import.meta.env.VITE_APIKEY;
+// console.log('APIKEY:', API_KEY);
 
+//VARIABLES ABOUT THE API
 const API_KEY = '016a30ce49a7789188b6fa9bad9963a6';
-const BASE_URL = 'https://api.themoviedb.org/3';
-const IMG_BASE_URL = 'https://image.tmdb.org/t/p/';
+const BASE_URL = 'https://api.themoviedb.org/3'; //API ANA DIZIN
+const IMG_BASE_URL = 'https://image.tmdb.org/t/p'; //API RESIM ANA DIZIN
+export { BASE_URL, IMG_BASE_URL };
 
-async function fetchMovies() {
+// ENDPOINT OBJECTS
+export const ENDPOINTS = {
+  TRENDING_WEEK: '/trending/movie/week', //API TREND FILM HAFTALIK
+  TRENDING_DAY: '/trending/movie/day', //API TREND FILM GUNLUK
+  POPULAR_MOVIES: '/movie/popular',
+  MOVIE_DETAILS: movieId => `/movie/${movieId}`,
+  SEARCH_MOVIES: '/search/movie',
+  GENRE_LIST: '/genre/movie/list',
+  IMG_W500: '/w500', //RESIM WIDTH 500PX (BURAYA IHTIYACA GORE DIGER EBATLAR EKLENIR)
+  IMG_ORIGINAL: '/original', // RESIM ORJINAL
+};
+
+export async function fetchMovies(baseurl, endpoint, params = {}) {
   try {
-    const response = await axios.get(`${BASE_URL}/movie/popular`, {
+    const response = await axios.get(`${baseurl}${endpoint}`, {
       params: {
         api_key: API_KEY,
         language: 'en-US',
         page: 1,
+        ...params,
       },
     });
-
-    console.log(response.data);
+    return response.data;
   } catch (error) {
-    // console.error('Error fetching data:', error);
+    console.error('Error fetching data:', error);
+    throw error;
   }
 }
 
-export default fetchMovies;
-// fetchMovies()
+//FUNCTION APPLICATION EXAMPLE
+// fetchMovies(BASE_URL, ENDPOINTS.TRENDING_WEEK);
+// fetchMovies(BASE_URL, ENDPOINTS.TRENDING_DAY);
+// fetchMovies(BASE_URL, ENDPOINTS.SEARCH_MOVIES, { query: 'avengers' });
+// fetchMovies(BASE_URL, ENDPOINTS.GENRE_LIST);
+// fetchMovies(BASE_URL, ENDPOINTS.MOVIE_DETAILS, { id: 337401 });
+// fetchMovies(BASE_URL, ENDPOINTS.POPULAR_MOVIES);
 
-// API Configuration (Bu Kisim Canlida Temizlenebilir...)
+// fetchMovies(BASE_URL, ENDPOINTS.POPULAR_MOVIES, { page: 1 }).then(data => {
+//   console.log(data);
+//   const randomNumber = Math.floor(Math.random() * 20);
+//   console.log(randomNumber);
+//   const movie = data.results[randomNumber];
+//   const imageUrl = `${IMG_BASE_URL}${ENDPOINTS.IMG_ORIGINAL}${movie.poster_path}`; // Resim URL'sini oluşturuyoruz
+
+//   const heroItemElement = document.querySelector('#heroItem');
+//   const imgElement = document.createElement('img');
+//   imgElement.src = imageUrl;
+//   imgElement.alt = movie.title;
+//   heroItemElement.appendChild(imgElement);
+// });
+
+// API Configuration (Bu Kisim Bilgi Icindir Canlida Temizlenebilir...)
 /* 
 {
   "images": {
