@@ -26,6 +26,4 @@
 /* Pagination styles */
 @import url('../src/css/pagination.css');
 
-* {
-  margin: 0;
-}
+
