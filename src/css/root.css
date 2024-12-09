@@ -23,7 +23,8 @@
   --font-weight-regular: 400;
 
   --white-color: #ffffff;
-  --black-color: #111111;
+  --black-color: #000000;
+  --page-background-dark: #111111;
   --secondary-bc-color: #282828;
   --accent-color: #f87719;
   --grey-color: #595959;
@@ -42,7 +43,73 @@
   );
 
   --hero-background-color: #2f303a;
+  --container-width: 1280px;
+  --container-padding: 32px;
 
   --cards-box-shadow: 1px 1px 24px 2px #01010173;
   --modal-box-shadow: 1px 1px 14px 4px #ff6b086b;
+}
+
+/* Theme-specific styles */
+body.light-theme {
+  --page-background: var(--white-color);
+  --text-color: var(--black-color);
+  --nav-background: var(--white-color);
+  --nav-text-color: var(--black-color);
+  --switch-bg: var(--grey-color);
+}
+
+body.dark-theme {
+  --page-background: var(--page-background-dark);
+  --text-color: var(--white-color);
+  --nav-background: var(--black-color);
+  --nav-text-color: var(--white-color);
+  --switch-bg: var(--secondary-bc-color);
+}
+
+body {
+  margin: 0;
+  background-color: var(--page-background);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Container styles */
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  width: 100%;
+}
+
+/* Theme switch specific styles */
+.switch-label {
+  background-color: var(--accent-color);
+  transition: background-color 0.3s ease;
+}
+
+.switch-slider {
+  background-color: var(--white-color);
+  transition: transform 0.3s ease;
+}
+
+.theme-switch:checked + .switch-label {
+  background-color: var(--accent-color);
+}
+
+.theme-switch:checked + .switch-label .switch-slider {
+  transform: translateX(24px);
+}
+
+/* Responsive container */
+@media screen and (max-width: 768px) {
+  :root {
+    --container-padding: 32px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    --container-padding: 20px;
+  }
 }
