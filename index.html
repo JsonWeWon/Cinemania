@@ -10,20 +10,41 @@
       rel="stylesheet"
     />
     <script type="module" crossorigin src="/Cinemania/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/Cinemania/assets/styles-BLiAZRiO.css">
+    <link rel="stylesheet" crossorigin href="/Cinemania/assets/styles-BiFcD20U.css">
   </head>
   <body>
-    <header>
+    <header class="header">
     <div class="container">
-        
-        <div class="navbar">
-            <a href="index.html">Home</a>
-            <a href="catalog.html">Catalog</a>
-            <a href="mylibrary.html">My Library</a>
-        </div>
-        
+        <nav class="nav">
+            <a href="./index.html" class="logo-link">
+                <svg class="logo-icon" width="32" height="32">
+                    <use href="/Cinemania/assets/icons-FLSUgoFt.svg#icon-popcorn"></use>
+                </svg>
+                <span class="logo-text">Cinemania</span>
+            </a>
+            
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="./index.html" class="nav-link active" data-page="home">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./catalog.html" class="nav-link" data-page="catalog">CATALOG</a>
+                </li>
+                <li class="nav-item">
+                    <a href="./mylibrary.html" class="nav-link" data-page="library">MY LIBRARY</a>
+                </li>
+            </ul>
+
+            <div class="theme-toggle">
+                <input type="checkbox" class="theme-switch" id="theme-switch">
+                <label for="theme-switch" class="switch-label">
+                    <span class="switch-slider"></span>
+                </label>
+            </div>
+        </nav>
     </div>
 </header>
+
     <!--icon-path="img/sprite.svg#logo"-->
 
     <main>
