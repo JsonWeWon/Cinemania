@@ -50,6 +50,10 @@
   --modal-box-shadow: 1px 1px 14px 4px #ff6b086b;
 }
 
+html {
+  background-color: var(--page-background);
+}
+
 /* Theme-specific styles */
 body.light-theme {
   --page-background: var(--white-color);
@@ -106,6 +110,7 @@ body {
   :root {
     --container-padding: 32px;
   }
+  
 }
 
 @media screen and (max-width: 480px) {

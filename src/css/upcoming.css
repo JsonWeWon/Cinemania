@@ -50,7 +50,7 @@
 .upcoming-content-movie-title {
     font-size: 20px;
     font-weight: 600;
-    color: #000;
+    color: var(--text-color);
     margin: 10px 0 20px 0;
 }
 
@@ -84,7 +84,7 @@
 
 .upcoming-listitem-text {
     font-weight: 600;
-    color: #111;
+    color: var(--text-color);
     font-size: 16px;
 }
 
@@ -97,7 +97,7 @@
 .upcoming-listitem-popularity,
 .upcoming-listitem-genre {
     font-size: 16px;
-    color: #111;
+    color: var(--text-color);
     font-family: var(--main-font);
 }
 
@@ -111,7 +111,7 @@
 
 .upcoming-movie-title {
     font-size: 16px;
-    color: #000;
+    color: var(--text-color);
     margin-top: 20px;
     margin-bottom: 16px;
     font-family: var(--main-font);
@@ -120,7 +120,7 @@
 .upcoming-movie-text {
     font-size: 14px;
     font-weight: 400;
-    color: #111;
+    color: var(--text-color);
     font-family: var(--main-font);
     
 }
@@ -178,6 +178,7 @@
 
     .upcoming-content-movie-title {
         font-size: 28px;
+        color: var(--text-color);
     }
 
     .upcoming-info {
