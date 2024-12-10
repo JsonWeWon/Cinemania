@@ -7,5 +7,6 @@ import './js/pagination';
 import './js/search';
 import './js/upcoming';
 import './js/weekly';
+import './js/theme';
 
 import './js/fetchMovies';
