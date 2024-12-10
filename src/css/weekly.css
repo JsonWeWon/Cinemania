@@ -1,13 +1,147 @@
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1280px) {
-    
+  .container .weekly-link-section {
+    padding-top: 80px;
+    padding-bottom: 28px;
+    padding-right: 32px;
+  }
+  .container .weekly-link-section .weekly-title {
+    font-size: 26px;
+  }
+  .container .weekly-link-section .weekly-see-all {
+    font-size: 26px;
+  }
+  .weekly-library .weekly-movie-card .catalog-item {
+    width: 395px;
+    height: 574px;
+  }
+  .weekly-library .weekly-movie-card {
+    flex-direction: row;
+  }
+  .weekly-movie-card .catalog-item:not(:first-child) {
+    display: list-item;
+  }
+  .catalog-info .catalog-title {
+    font-size: 20px;
+  }
+  .catalog-info .catalog-span {
+    font-size: 20px;
+  }
 }
-
-
 
 /* Styles for Tablet devices */
 @media only screen and (min-width: 768px) {
-    
+  .weekly-link-section .weekly-title {
+    font-size: 24px;
+  }
+  .weekly-link-section .weekly-see-all {
+    font-size: 24px;
+  }
+  .weekly-movie-card .catalog-item {
+    width: 224px;
+    height: 325px;
+  }
+  .weekly-library .weekly-movie-card {
+    flex-direction: row;
+  }
+  .weekly-movie-card .catalog-item:not(:first-child) {
+    display: list-item;
+  }
 }
 
 /* Styles for Mobile devices */
+
+.weekly-link-section {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  padding: 40px 20px 14px;
+  justify-content: space-between;
+}
+
+.weekly-title {
+  font-family: var(--main-font);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18.75px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.weekly-see-all {
+  font-family: var(--main-font);
+  color: var(--accent-color);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18.75px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.weekly-library {
+  padding: 10px 20px 44px;
+}
+
+.weekly-movie-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s;
+}
+.weekly-movie-card li:not(:first-child) {
+  display: none;
+}
+
+.catalog-item {
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  width: 280px;
+  height: 406px;
+  background-size: contain;
+  border-radius: 5px;
+  cursor: pointer;
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 63.48%,
+      rgba(0, 0, 0, 0.9) 92.16%
+    ),
+    url(../img/card.png);
+}
+
+.catalog-info {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+}
+.catalog-title {
+  font-family: var(--main-font);
+  color: var(--white-color);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 167%;
+  text-transform: uppercase;
+}
+.catalog-span {
+  font-family: var(--main-font);
+  color: var(--light-grey-color);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 167%;
+}
+
+.catalog-stars {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+.stars {
+  color: var(--white-color);
+  font-family: var(--main-font);
+}
