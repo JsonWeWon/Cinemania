@@ -13,11 +13,15 @@ export { BASE_URL, IMG_BASE_URL };
 export const ENDPOINTS = {
   TRENDING_WEEK: '/trending/movie/week', //API TREND FILM HAFTALIK
   TRENDING_DAY: '/trending/movie/day', //API TREND FILM GUNLUK
-  POPULAR_MOVIES: '/movie/popular',
+  POPULAR_MOVIES: '/movie/popular', //API TREND FILM
+  UPCOMING_MOVIES: '/movie/upcoming', //API GET UPCOMING
   MOVIE_DETAILS: movieId => `/movie/${movieId}`,
+  MOVIE_VIDEOS: movieId => `/movie/${movieId}/videos`,
   SEARCH_MOVIES: '/search/movie',
   GENRE_LIST: '/genre/movie/list',
-  IMG_W500: '/w500', //RESIM WIDTH 500PX (BURAYA IHTIYACA GORE DIGER EBATLAR EKLENIR)
+  IMG_W500: '/w500', //(BURAYA IHTIYACA GORE DIGER EBATLAR EKLENIR)
+  IMG_W780: '/w780',
+  IMG_W1280: '/w1280',
   IMG_ORIGINAL: '/original', // RESIM ORJINAL
 };
 

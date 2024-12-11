@@ -4,10 +4,14 @@ import {
   ENDPOINTS,
   IMG_BASE_URL,
 } from './fetchMovies.js';
+const heroItemElement = document.querySelector('#heroImg');
+const heroItemTitle = document.querySelector('.hero-h1');
+const heroItemSummary = document.querySelector('.hero-summary');
+const heroButtonWatchTrailer = document.querySelector(
+  '.hero-button-watchTrailer'
+);
 
 function setHeroBackground(movie) {
-  const heroItemElement = document.querySelector('#heroImg');
-
   // Media Query
   const mobileQuery = window.matchMedia('(max-width: 767px)');
   const tabletQuery = window.matchMedia(
@@ -17,8 +21,8 @@ function setHeroBackground(movie) {
 
   // IMG URL
   const mobileImage = `${IMG_BASE_URL}${ENDPOINTS.IMG_W500}${movie.backdrop_path}`;
-  const tabletImage = `${IMG_BASE_URL}${ENDPOINTS.IMG_W500}${movie.backdrop_path}`;
-  const desktopImage = `${IMG_BASE_URL}${ENDPOINTS.IMG_W500}${movie.backdrop_path}`;
+  const tabletImage = `${IMG_BASE_URL}${ENDPOINTS.IMG_W780}${movie.backdrop_path}`;
+  const desktopImage = `${IMG_BASE_URL}${ENDPOINTS.IMG_W1280}${movie.backdrop_path}`;
 
   // Media Query
   if (mobileQuery.matches) {
@@ -32,19 +36,41 @@ function setHeroBackground(movie) {
     heroItemElement.style.height = '720px';
   }
 
-  heroItemElement.style.backgroundSize = 'contain';
-  heroItemElement.style.backgroundPosition = 'right center';
-  heroItemElement.style.backgroundRepeat = 'no-repeat';
-
-  heroItemElement.setAttribute('aria-label', movie.title); //AALT BILGISI
+  heroItemElement.setAttribute('aria-label', movie.title);
+  heroItemTitle.innerHTML = movie.title;
+  heroItemSummary.innerHTML = movie.overview;
 }
 
 fetchMovies(BASE_URL, ENDPOINTS.POPULAR_MOVIES, { page: 1 }).then(data => {
-  console.log(data);
+  console.log(data); //buildden sonra sil
   const randomNumber = Math.floor(Math.random() * 20);
   const movie = data.results[randomNumber];
+  const movieId = movie.id;
 
-  setHeroBackground(movie);
+  setHeroBackground(movie); //Background Heroya Basar
+  //OFFICIAL TRAILER
+  fetchMovies(BASE_URL, ENDPOINTS.MOVIE_VIDEOS(movieId), { page: 1 }).then(
+    videoData => {
+      // console.log('VIDEO:', videoData);
+
+      const officialTrailer = videoData.results.find(
+        video =>
+          video.official === true &&
+          video.site === 'YouTube' &&
+          video.type === 'Trailer'
+      );
+
+      if (officialTrailer) {
+        const youtubeUrl = `https://www.youtube.com/watch?v=${officialTrailer.key}`;
+        heroButtonWatchTrailer.href = youtubeUrl;
+        heroButtonWatchTrailer.addEventListener('click', () => {
+          window.open(youtubeUrl, '_blank');
+        });
+      } else {
+        console.log('No official YouTube trailer found.');
+      }
+    }
+  );
 });
 
 window.addEventListener('resize', () => {
