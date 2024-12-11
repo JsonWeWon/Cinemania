@@ -19,21 +19,21 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    border: 1px solid var(--pagination-accent-color);
+    border: 1px solid var(--accent-color);
     background-color: transparent;
-    color: var(--pagination-text-color);
+    color: var(--white-color);
     transition: all 0.3s ease;
   }
 
   .pagination-button:hover,
   .pagination-button:focus {
-    background-color: var(--pagination-accent-color);
-    color: var(--pagination-hover-text-color);
+    background-color: var(--accent-color);
+    color: var(--white-color);
   }
 
   .pagination-button.active {
-    background-color: var(--pagination-accent-color);
-    color: var(--pagination-hover-text-color);
+    background-color: var(--accent-color);
+    color: var(--white-color);
   }
 
   .pagination-numbers {

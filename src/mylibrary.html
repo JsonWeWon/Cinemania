@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Library</title>
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="./css/library-list.css" />
+
+    <script type="module" src="./js/library.js"></script>
   </head>
   <body>
     <load src="./partials/header.html"></load>
@@ -24,7 +25,7 @@
     <load src="./partials/modal-team.html"></load>
 
 
-    <script type="module" src="./js/library.js"></script>
+    
     <script>
       document.querySelectorAll('load').forEach(el => {
         const src = el.getAttribute('src');
@@ -40,7 +41,7 @@
         }
       });
     </script>
-
+    
     <script type="module" src="./main.js"></script>
 
 

@@ -10,6 +10,7 @@ const movieGrid = document.getElementById('movieGrid');
 
 let currentPage = 1;
 let totalPages = 1;
+let page = 1;
 
 export async function initPagination() {
   await loadMovies(currentPage);
@@ -18,15 +19,20 @@ export async function initPagination() {
   nextButton.addEventListener('click', () => changePage(currentPage + 1));
 }
 
-async function fetchMovies(page = 1) {
+async function fetchMovies() {
   try {
-    const response = await axios.get(`${BASE_URL}/movie/popular`, {
+    const response = await axios.get(`${BASE_URL}/search/movie`, {
       params: {
         api_key: API_KEY,
         page: page,
+        query: "Love"
       },
     });
+
+    console.log("response.data", response.data);
     return response.data;
+
+    
   } catch (error) {
     console.error('Error fetching movies:', error);
     throw error;
@@ -36,8 +42,11 @@ async function fetchMovies(page = 1) {
 async function loadMovies(page) {
   try {
     const data = await fetchMovies(page);
+    console.log("load movie data", data);
     renderMovies(data.results);
     totalPages = data.total_pages;
+
+    console.log("totalPages", totalPages);
     currentPage = page;
     updatePaginationUI();
   } catch (error) {
@@ -47,9 +56,10 @@ async function loadMovies(page) {
 }
 
 function renderMovies(movies) {
-  movieGrid.innerHTML = '';
+  //movieGrid.innerHTML = '';
   movies.forEach(movie => {
     const movieCard = createMovieCard(movie);
+    console.log("movieCard", movieCard);
     movieGrid.appendChild(movieCard);
   });
 }
@@ -63,6 +73,7 @@ function createMovieCard(movie) {
     <p>Release Date: ${movie.release_date}</p>
     <p>Rating: ${movie.vote_average}/10</p>
   `;
+  console.log("card", card);
   return card;
 }
 
@@ -96,6 +107,10 @@ function showErrorMessage(message) {
   const errorElement = document.createElement('div');
   errorElement.className = 'error-message';
   errorElement.textContent = message;
-  movieGrid.innerHTML = '';
+  //movieGrid.innerHTML = '';
   movieGrid.appendChild(errorElement);
 }
+
+initPagination();
+
+updatePaginationUI();
