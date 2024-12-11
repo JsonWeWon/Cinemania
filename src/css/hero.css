@@ -194,6 +194,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transform: translateX(25%);
   }
 
   .hero-content-frame {
@@ -202,7 +203,7 @@
   }
 
   .hero-h1 {
-    font-size: 44px;
+    font-size: 38px;
   }
 
   .hero-rating-stars {
@@ -257,8 +258,8 @@
     z-index: 1;
     background: linear-gradient(
       75deg,
-      rgba(0, 0, 0, 1) 25%,
-      rgba(0, 0, 0, 0.75) 50%,
+      rgba(0, 0, 0, 1) 33%,
+      rgba(0, 0, 0, 0.70) 50%,
       rgba(0, 0, 0, 0) 100%
     );
   }
@@ -267,16 +268,18 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transform: translateX(25%);
   }
 
   .hero-content-frame {
-    margin: 118px 0px 0px 135px;
-    width: 242px;
+    margin: 70px 0px 0px 120px;
+    width: 260px;
     z-index: 2;
   }
 
   .hero-h1 {
-    font-size: 64px;
+    font-size: 56px;
+    width: 367px;
     z-index: 2;
   }
 
