@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Catalog</title>
-    <script type="module" crossorigin src="/Cinemania/assets/main-DgPM6pL3.js"></script>
-    <link rel="stylesheet" crossorigin href="/Cinemania/assets/main-DJW5E2Rt.css">
+    <script type="module" crossorigin src="/Cinemania/assets/vendor-N5iQpiFS.js"></script>
+    <script type="module" crossorigin src="/Cinemania/assets/main-BF8KQp-d.js"></script>
+    <link rel="stylesheet" crossorigin href="/Cinemania/assets/main-DkLCehkJ.css">
   </head>
   <body>
     <header class="header">
@@ -20,33 +21,35 @@
             </a>
 
             <div class="nav-wrapper">
-                <!-- Desktop navigation -->
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="./index.html" class="nav-link active" data-page="home">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="./catalog.html" class="nav-link" data-page="catalog">CATALOG</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="./mylibrary.html" class="nav-link" data-page="library">MY LIBRARY</a>
-                    </li>
-                </ul>
+                <div style="display: flex;  width: 100%; justify-content: space-between;">
+                    <!-- Desktop navigation -->
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="./index.html" class="nav-link active" data-page="home">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./catalog.html" class="nav-link" data-page="catalog">CATALOG</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./mylibrary.html" class="nav-link" data-page="library">MY LIBRARY</a>
+                        </li>
+                    </ul>
 
-                <div class="header-controls">
-                    <div class="theme-toggle">
-                        <input type="checkbox" class="theme-switch" id="theme-switch">
-                        <label for="theme-switch" class="switch-label">
-                            <span class="switch-slider"></span>
-                        </label>
+                    <div class="header-controls">
+                        <div class="theme-toggle">
+                            <input type="checkbox" class="theme-switch" id="theme-switch">
+                            <label for="theme-switch" class="switch-label">
+                                <span class="switch-slider"></span>
+                            </label>
+                        </div>
+                        
+                        <!-- Mobile menu button -->
+                        <button type="button" class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+                            <svg class="mobile-menu-icon" width="24" height="24">
+                                <use href="/Cinemania/assets/icons-CmNuQc8N.svg#icon-menu"></use>
+                            </svg>
+                        </button>
                     </div>
-                    
-                    <!-- Mobile menu button -->
-                    <button type="button" class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
-                        <svg class="mobile-menu-icon" width="24" height="24">
-                            <use href="/Cinemania/assets/icons-CmNuQc8N.svg#icon-menu"></use>
-                        </svg>
-                    </button>
                 </div>
             </div>
 
@@ -250,6 +253,21 @@
         </div>
     </div>
 </section>
+      <div class="pagination-container">
+  <div class="pagination">
+    <button class="pagination-button arrow-left" id="prevButton" type="button">
+      <svg class="pagi-svg" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.9375 6.125L10.0625 14L17.9375 21.875" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    </button>
+    <div id="paginationNumbers" class="pagination-numbers"></div>
+    <button class="pagination-button arrow-right" id="nextButton" type="button">
+      <svg class="pagi-svg" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10.0625 6.125L17.9375 14L10.0625 21.875" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </button>
+  </div>
+</div>
     </main>
 
     <!-- Footer -->
@@ -264,7 +282,6 @@
     
     
     
-
 
   </body>
 </html>

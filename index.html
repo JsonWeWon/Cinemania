@@ -9,8 +9,9 @@
       href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/Cinemania/assets/main-DgPM6pL3.js"></script>
-    <link rel="stylesheet" crossorigin href="/Cinemania/assets/main-DJW5E2Rt.css">
+    <script type="module" crossorigin src="/Cinemania/assets/vendor-N5iQpiFS.js"></script>
+    <script type="module" crossorigin src="/Cinemania/assets/main-BF8KQp-d.js"></script>
+    <link rel="stylesheet" crossorigin href="/Cinemania/assets/main-DkLCehkJ.css">
   </head>
   <body>
     <header class="header">
@@ -24,33 +25,35 @@
             </a>
 
             <div class="nav-wrapper">
-                <!-- Desktop navigation -->
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="./index.html" class="nav-link active" data-page="home">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="./catalog.html" class="nav-link" data-page="catalog">CATALOG</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="./mylibrary.html" class="nav-link" data-page="library">MY LIBRARY</a>
-                    </li>
-                </ul>
+                <div style="display: flex;  width: 100%; justify-content: space-between;">
+                    <!-- Desktop navigation -->
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="./index.html" class="nav-link active" data-page="home">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./catalog.html" class="nav-link" data-page="catalog">CATALOG</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./mylibrary.html" class="nav-link" data-page="library">MY LIBRARY</a>
+                        </li>
+                    </ul>
 
-                <div class="header-controls">
-                    <div class="theme-toggle">
-                        <input type="checkbox" class="theme-switch" id="theme-switch">
-                        <label for="theme-switch" class="switch-label">
-                            <span class="switch-slider"></span>
-                        </label>
+                    <div class="header-controls">
+                        <div class="theme-toggle">
+                            <input type="checkbox" class="theme-switch" id="theme-switch">
+                            <label for="theme-switch" class="switch-label">
+                                <span class="switch-slider"></span>
+                            </label>
+                        </div>
+                        
+                        <!-- Mobile menu button -->
+                        <button type="button" class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+                            <svg class="mobile-menu-icon" width="24" height="24">
+                                <use href="/Cinemania/assets/icons-CmNuQc8N.svg#icon-menu"></use>
+                            </svg>
+                        </button>
                     </div>
-                    
-                    <!-- Mobile menu button -->
-                    <button type="button" class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
-                        <svg class="mobile-menu-icon" width="24" height="24">
-                            <use href="/Cinemania/assets/icons-CmNuQc8N.svg#icon-menu"></use>
-                        </svg>
-                    </button>
                 </div>
             </div>
 
