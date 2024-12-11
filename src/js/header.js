@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
 
     function toggleMenu() {
-        const isOpen = mobileMenu.classList.contains('is-open');
+        const isOpen = mobileMenu.classList.contains('is-open');const hrefLink = "https://raw.githubusercontent.com/JsonWeWon/Cinemania/refs/heads/main/src/img/icons.svg"
         
         // Toggle menu visibility
         mobileMenu.classList.toggle('is-open');
@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         menuIcon.setAttribute('href', 
             isOpen ? './img/icons.svg#icon-menu' : './img/icons.svg#icon-close'
         );
+        
         
         // Toggle body scroll
         body.style.overflow = isOpen ? '' : 'hidden';
@@ -82,4 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.add('active');
         });
     }
+    console.log("menuıcoon", menuIcon.getAttribute("href"));
 });
+
+
+console.log('header.js loaded');
