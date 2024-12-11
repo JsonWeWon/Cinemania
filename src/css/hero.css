@@ -6,10 +6,6 @@
   position: relative;
   display: flex;
   padding: 0;
-  background-image: url('../img/hero-Mobile.png');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
   height: 380px;
   background-color: #000000;
   transition: background-color 0.3s ease;
@@ -25,9 +21,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: -2;
+  z-index: 0;
 
-  width: 100%; 
+  width: 100%;
   height: 100%;
   overflow: hidden;
 }
@@ -38,11 +34,17 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: -1;
+  z-index: 1;
+  background: linear-gradient(
+    75deg,
+    rgba(0, 0, 0, 1) 25%,
+    rgba(0, 0, 0, 0.75) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 .hero-image {
-  width: 100%; 
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
@@ -59,9 +61,10 @@
 .hero-h1 {
   font-family: var(--font-family);
   font-weight: 700;
-  font-size: 32px;
+  font-size: 26px;
   color: #ffffff;
   transition: color 0.3s ease;
+  z-index: 2;
 }
 
 @media screen and (max-width: 767px) {
@@ -82,6 +85,7 @@
   height: 16px;
   margin: 12px 0 0 0;
   color: orange;
+  z-index: 2;
 }
 
 .hero-summary {
@@ -90,8 +94,9 @@
   font-size: 14px;
   color: #ffffff;
   margin: 20px 0px 0px 0px;
-  width: 177px;
+  width: 200px;
   transition: color 0.3s ease;
+  z-index: 2;
 }
 
 @media screen and (max-width: 767px) {
@@ -114,6 +119,7 @@
   margin: 20px 0px 0px 0px;
   width: 242px;
   height: 38px;
+  z-index: 2;
 }
 
 /* Button Styles */
@@ -149,14 +155,45 @@
 /* Styles for Tablet devices */
 @media only screen and (min-width: 768px) {
   .hero > .container {
+    position: relative;
     display: flex;
     padding: 0;
-    background-image: url('../img/hero-tablet.png');
-    background-size: contain;
-    background-position: right center;
-    background-repeat: no-repeat;
     width: 768px;
     height: 432px;
+  }
+
+  .hero-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .hero-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background: linear-gradient(
+      75deg,
+      rgba(0, 0, 0, 1) 25%,
+      rgba(0, 0, 0, 0.75) 50%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .hero-content-frame {
@@ -193,27 +230,65 @@
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1280px) {
   .hero > .container {
-    background-image: url('../img/hero-desktop.png');
+    position: relative;
     width: 1280px;
     height: 720px;
+  }
+
+  .hero-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .hero-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background: linear-gradient(
+      75deg,
+      rgba(0, 0, 0, 1) 25%,
+      rgba(0, 0, 0, 0.75) 50%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .hero-content-frame {
     margin: 118px 0px 0px 135px;
     width: 242px;
+    z-index: 2;
   }
 
   .hero-h1 {
     font-size: 64px;
+    z-index: 2;
   }
 
   .hero-rating-stars {
     height: 24px;
+    z-index: 2;
   }
 
   .hero-summary {
     font-size: 16px;
     width: 367px;
+    z-index: 2;
   }
 
   .hero-buttons {
@@ -221,6 +296,7 @@
     margin: 36px 0px 0px 0px;
     width: 312px;
     height: 48px;
+    z-index: 2;
   }
 
   .hero-button-watchTrailer,

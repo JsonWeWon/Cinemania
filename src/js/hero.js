@@ -11,6 +11,17 @@ const heroButtonWatchTrailer = document.querySelector(
   '.hero-button-watchTrailer'
 );
 
+// Yazılar uzun olunca mobilde düğmeleri
+// alta atmasın diye
+// bir fonksiyon ekledim.
+function shortenText(text) {
+  const maxLength = 170;
+  if (text.length > maxLength) {
+    return text.slice(0, maxLength) + '...';
+  }
+  return text;
+}
+
 function setHeroBackground(movie) {
   // Media Query
   const mobileQuery = window.matchMedia('(max-width: 767px)');
@@ -38,7 +49,7 @@ function setHeroBackground(movie) {
 
   heroItemElement.setAttribute('aria-label', movie.title);
   heroItemTitle.innerHTML = movie.title;
-  heroItemSummary.innerHTML = movie.overview;
+  heroItemSummary.innerHTML = shortenText(movie.overview);
 }
 
 fetchMovies(BASE_URL, ENDPOINTS.POPULAR_MOVIES, { page: 1 }).then(data => {
