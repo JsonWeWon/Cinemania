@@ -1,0 +1,118 @@
+/* Catalog Section CSS */
+.catalog-film-section {
+  padding-top: 16px;
+  background-color: var(--black);
+  transition: background-color var(--transition);
+}
+
+.light .catalog-film-section {
+  background-color: var(--white);
+  transition: background-color var(--transition);
+}
+
+.catalog-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.catalog-item {
+  position: relative;
+  width: 280px;
+  height: 406px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.catalog-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.catalog-card-info-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.7);
+  color: var(--white);
+  font-family: 'Roboto', sans-serif;
+}
+
+.catalog-card-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+}
+
+.catalog-card-description {
+  font-size: 14px;
+  color: var(--light-gray);
+  margin-bottom: 4px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #ffd700; /* Gold for stars */
+}
+
+.rating span {
+  margin-left: 4px;
+  color: var(--white);
+}
+
+/* Responsive Adjustments */
+@media screen and (min-width: 768px) {
+  .catalog-list {
+    gap: 32px;
+  }
+
+  .catalog-item {
+    width: 224px;
+    height: 325px;
+  }
+
+  .catalog-card-info-container {
+    padding: 10px;
+  }
+
+  .catalog-card-title {
+    font-size: 14px;
+  }
+
+  .catalog-card-description {
+    font-size: 12px;
+  }
+
+  .rating {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .catalog-item {
+    width: 394px;
+    height: 574px;
+  }
+
+  .catalog-card-title {
+    font-size: 20px;
+  }
+
+  .catalog-card-description {
+    font-size: 16px;
+  }
+
+  .rating {
+    font-size: 16px;
+  }
+}
