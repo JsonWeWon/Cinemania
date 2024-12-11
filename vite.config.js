@@ -7,7 +7,7 @@ import path from 'path';
 
 export default defineConfig(({ command }) => {
   return {
-    // base: '/Cinemania/',
+    base: '/Cinemania/',
     resolve: {
       // alias'ı resolve içinde tanımlamanız gerekir
       alias: {
