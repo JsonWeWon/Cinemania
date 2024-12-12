@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Library</title>
     <script type="module" crossorigin src="/Cinemania/assets/vendor-N5iQpiFS.js"></script>
-    <script type="module" crossorigin src="/Cinemania/assets/main-BqgE1mfs.js"></script>
+    <script type="module" crossorigin src="/Cinemania/assets/main-DzQXMF7x.js"></script>
     <link rel="stylesheet" crossorigin href="/Cinemania/assets/main-IHeOpD9b.css">
   </head>
   <body>
@@ -238,7 +238,16 @@
 </section>
 
 
-      <div id="library-container"></div>
+      <div id="library-container">
+  <div id="default-content" style="display: none; text-align: center">
+    <h2>Oops... You don’t have any movies at your library.</h2>
+    <p>Film eklemek için aşağıdaki düğmeye tıklayın:</p>
+    <button id="go-to-catalog">Catalog Sayfasına Git</button>
+  </div>
+
+  <div id="library-list"></div>
+</div>
+
     </main>
 
     <!-- Footer -->
@@ -256,7 +265,7 @@
 
 
     
-    <script>
+    <!-- <script>
       document.querySelectorAll('load').forEach(el => {
         const src = el.getAttribute('src');
         if (src) {
@@ -270,7 +279,7 @@
             .catch(err => console.error('Error loading:', src, err));
         }
       });
-    </script>
+    </script> -->
     
   </body>
 </html>
