@@ -70,6 +70,6 @@ const movieInit = () => {
 }
 
 
-movieInit();
+movieInit(); 
 
 console.log("upcoming js yüklendi");
