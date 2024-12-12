@@ -6,7 +6,7 @@ const IMG_BASE_URL = 'https://image.tmdb.org/t/p';
 const ENDPOINT = "/trending/movie/week";
 
 //const catalogList = document.querySelector('.weekly-movie-card');
-const catalogList = document.getElementById("weekly-movie-card");
+const catalogList = document.querySelector("#weekly-movie-card");
 
 async function fetchMovies() {
   try {
