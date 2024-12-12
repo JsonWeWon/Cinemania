@@ -3,6 +3,8 @@
   padding-top: 16px;
   background-color: var(--black);
   transition: background-color var(--transition);
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .light .catalog-film-section {
@@ -73,7 +75,9 @@
 /* Responsive Adjustments */
 @media screen and (min-width: 768px) {
   .catalog-list {
-    gap: 32px;
+    gap: 49px;
+    max-width: 800px;
+    margin: 0 auto;
   }
 
   .catalog-item {
@@ -99,6 +103,11 @@
 }
 
 @media screen and (min-width: 1280px) {
+
+  .catalog-list {
+    max-width: 1280px;
+  }
+
   .catalog-item {
     width: 394px;
     height: 574px;
