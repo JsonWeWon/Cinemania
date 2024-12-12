@@ -84,6 +84,8 @@ fetchMovies(BASE_URL, ENDPOINTS.POPULAR_MOVIES, { page: 1 }).then(data => {
   );
 });
 
+console.log("hero js yüklendi");
+
 // window.addEventListener('resize', () => {
 //   fetchMovies(BASE_URL, ENDPOINTS.POPULAR_MOVIES, { page: 1 }).then(data => {
 //     const randomNumber = Math.floor(Math.random() * 20);
