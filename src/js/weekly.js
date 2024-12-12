@@ -30,6 +30,8 @@ async function loadMovies() {
   try{
     const data = await fetchMovies();
 
+    console.log("data", data);
+
     const catalogItems = data.results.slice(0, 3).map(item => {
 
       return `
@@ -52,4 +54,6 @@ async function loadMovies() {
 }
 
 loadMovies();
+
+console.log("weeklyjs loaded");
 
