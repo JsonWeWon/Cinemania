@@ -32,8 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenuBtn.addEventListener('click', (e) => {
             e.stopPropagation(); // Prevent click from bubbling to document
             toggleMenu();
-            console.log("menuıcoon", menuIcon.getAttribute("href"));
-            console.log("hrefff", menuIcon.getAttribute("href").split('#')[0]);
         });
 
         // Close menu when clicking on mobile navigation links
@@ -90,11 +88,9 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.add('active');
         });
     }
-    //console.log("menuıcoon", menuIcon.getAttribute("href"));
     
 });
 
 
-console.log('header.js loaded');
 
 

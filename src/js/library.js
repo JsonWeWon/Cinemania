@@ -62,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
 //       console.error('Error loading library-list.html:', error);
 //     });
 
-console.log("libraryList", libraryList);
 });
 
 function renderLibrary(library) {
