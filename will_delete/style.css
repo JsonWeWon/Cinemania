@@ -1,19 +1,29 @@
-/* Styles for Desktop devices */
-@media only screen and (min-width: 1280px) {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    .footer {
-        background-color: #111111;
-        padding: 2rem 0;
-        text-align: center;
-        margin-top: auto;
-        color: #ffffff;
-    }
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+}
 
-    .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-    }
+/* Footer Styles */
+.footer {
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    padding: 2rem 0;
+    border-top: 1px solid #dee2e6;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .copyright {
@@ -243,12 +253,3 @@
 .modal-content::-webkit-scrollbar-thumb:hover {
     background: #e65c00;
 }
-
-
-
-/* Styles for Tablet devices */
-@media only screen and (min-width: 768px) {
-    
-}
-
-/* Styles for Mobile devices */

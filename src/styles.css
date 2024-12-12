@@ -1,28 +1,48 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
-/* Common styles */
-@import url("../src/css/reset.css");
-@import url("../src/css/root.css");
-@import url("../src/css/header.css");
-@import url("../src/css/footer.css");
+/* Root styles */
+@import url('./css/root.css');
+@import url('./css/reset.css');
 
-/* Sections style */
-@import url('../src/css/hero.css');
-@import url('../src/css/library-list.css');
-@import url('../src/css/container.css');
-@import url('../src/css/modal-details.css');
-@import url('../src/css/modal-team.css');
-@import url('../src/css/modal-trailer.css');
-@import url('../src/css/search-input.css');
-@import url('../src/css/search-list.css');
-@import url('../src/css/category.css');
-@import url('../src/css/upcoming.css');
-@import url('../src/css/weekly.css');
+/* Components */
+@import url('./css/container.css');
+@import url('./css/header.css');
+@import url('./css/hero.css');
+@import url('./css/weekly.css');
+@import url('./css/upcoming.css');
+@import url('./css/footer.css');
+@import url('./css/modal-details.css');
+@import url('./css/modal-trailer.css');
+@import url('./css/modal-team.css');
+@import url('./css/category.css');
+@import url('./css/search-input.css');
+@import url('./css/search-list.css');
+@import url('./css/library-list.css');
+@import url('./css/pagination.css');
 
+/* Default dark theme styles */
+:root {
+    color-scheme: dark;
+}
 
-/* Pagination styles */
-@import url('../src/css/pagination.css');
+html {
+    background-color: #111111;
+}
+
+body {
+    background-color: #111111;
+}
+
+/* Theme transitions only after page load */
+.theme-loaded body,
+.theme-loaded .header,
+.theme-loaded .hero > .container {
+    transition: background-color 0.3s ease;
+}
+
+/* Light theme styles */
+.light-theme {
+    color-scheme: light;
+}
+
+.light-theme body {
+    background-color: #ffffff;
+}

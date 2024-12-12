@@ -60,8 +60,9 @@
 .nav-wrapper {
     display: flex;
     align-items: center;
-    margin-left: auto;
     gap: 32px;
+    flex-grow: 1;
+    justify-content: center;
 }
 
 /* Header Controls */
@@ -70,6 +71,8 @@
     align-items: center;
     gap: 16px;
     z-index: 102;
+    position: absolute;
+    right: 0;
 }
 
 /* Mobile Menu Button */
