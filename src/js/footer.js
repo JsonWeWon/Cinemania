@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const modalContainer = document.createElement('div');
-    document.body.appendChild(modalContainer);
+    // document.body.appendChild(modalContainer);
 
     // Modal HTML dosyasını yükle
     fetch('modal.html')
