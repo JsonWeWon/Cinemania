@@ -6,11 +6,10 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 const paginationNumbers = document.getElementById('paginationNumbers');
 const prevButton = document.getElementById('prevButton');
 const nextButton = document.getElementById('nextButton');
-const movieGrid = document.getElementById('movieGrid');
+const movieList = document.getElementById('movie-list');
 
 let currentPage = 1;
 let totalPages = 1;
-let page = 1;
 
 export async function initPagination() {
   await loadMovies(currentPage);
@@ -19,20 +18,15 @@ export async function initPagination() {
   nextButton.addEventListener('click', () => changePage(currentPage + 1));
 }
 
-async function fetchMovies() {
+async function fetchMovies(page) {
   try {
-    const response = await axios.get(`${BASE_URL}/search/movie`, {
+    const response = await axios.get(`${BASE_URL}/trending/movie/week`, {
       params: {
         api_key: API_KEY,
-        page: page,
-        query: "Love"
+        page,
       },
     });
-
-    console.log("response.data", response.data);
     return response.data;
-
-    
   } catch (error) {
     console.error('Error fetching movies:', error);
     throw error;
@@ -42,11 +36,8 @@ async function fetchMovies() {
 async function loadMovies(page) {
   try {
     const data = await fetchMovies(page);
-    console.log("load movie data", data);
     renderMovies(data.results);
     totalPages = data.total_pages;
-
-    console.log("totalPages", totalPages);
     currentPage = page;
     updatePaginationUI();
   } catch (error) {
@@ -56,24 +47,24 @@ async function loadMovies(page) {
 }
 
 function renderMovies(movies) {
-  //movieGrid.innerHTML = '';
+  movieList.innerHTML = ''; // Clear current list
   movies.forEach(movie => {
     const movieCard = createMovieCard(movie);
-    console.log("movieCard", movieCard);
-    movieGrid.appendChild(movieCard);
+    movieList.appendChild(movieCard);
   });
 }
 
 function createMovieCard(movie) {
   const card = document.createElement('div');
-  card.className = 'movie-card';
+  card.className = 'catalog-item';
+  card.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`;
   card.innerHTML = `
-    <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
-    <h3>${movie.title}</h3>
-    <p>Release Date: ${movie.release_date}</p>
-    <p>Rating: ${movie.vote_average}/10</p>
+    <div class="catalog-card-info-container">
+      <h3 class="catalog-card-title">${movie.title}</h3>
+      <p class="catalog-card-description">${movie.release_date}</p>
+      <p class="rating">⭐ ${movie.vote_average.toFixed(1)}</p>
+    </div>
   `;
-  console.log("card", card);
   return card;
 }
 
@@ -104,13 +95,10 @@ async function changePage(newPage) {
 }
 
 function showErrorMessage(message) {
-  const errorElement = document.createElement('div');
+  const errorElement = document.createElement('p');
   errorElement.className = 'error-message';
   errorElement.textContent = message;
-  //movieGrid.innerHTML = '';
-  movieGrid.appendChild(errorElement);
+  movieList.appendChild(errorElement);
 }
 
 initPagination();
-
-updatePaginationUI();
