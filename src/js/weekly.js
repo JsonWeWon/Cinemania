@@ -5,7 +5,9 @@ import {
   IMG_BASE_URL,
 } from './fetchMovies.js';
 
-const catalogList = document.querySelector('.weekly-movie-card');
+//const catalogList = document.querySelector('.weekly-movie-card');
+const catalogList = document.getElementById("weekly-movie-card");
+console.log("weekly div", catalogList);
 let genreMap = {};
 
 fetchMovies(BASE_URL, ENDPOINTS.GENRE_LIST).then(data => {
