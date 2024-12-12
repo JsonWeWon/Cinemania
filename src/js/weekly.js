@@ -37,3 +37,4 @@ fetchMovies(BASE_URL, ENDPOINTS.GENRE_LIST).then(data => {
     catalogList.innerHTML = catalogItems.join('');
   });
 });
+
