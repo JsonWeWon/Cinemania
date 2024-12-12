@@ -9,6 +9,7 @@ searchButton.addEventListener('click', () => {
   const query = searchInput.value.trim();
   if (query) {
     searchMovies(query);
+    console.log("query", query);
   }
 });
 
