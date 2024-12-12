@@ -5,21 +5,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuIcon = document.querySelector('.mobile-menu-icon use');
     const body = document.body;
 
+
+    
+
     function toggleMenu() {
-        const isOpen = mobileMenu.classList.contains('is-open');const hrefLink = "https://raw.githubusercontent.com/JsonWeWon/Cinemania/refs/heads/main/src/img/icons.svg"
-        
+        const isOpen = mobileMenu.classList.contains('is-open');
+        const svgHref = menuIcon.getAttribute("href").split('#')[0];
         // Toggle menu visibility
         mobileMenu.classList.toggle('is-open');
         mobileMenuBtn.setAttribute('aria-expanded', !isOpen);
         
         // Toggle menu icon
         menuIcon.setAttribute('href', 
-            isOpen ? './img/icons.svg#icon-menu' : './img/icons.svg#icon-close'
+            //isOpen ? './img/icons.svg#icon-menu' : './img/icons.svg#icon-close'
+            isOpen ? svgHref+'#icon-menu' : svgHref+'#icon-close'
         );
         
         
         // Toggle body scroll
         body.style.overflow = isOpen ? '' : 'hidden';
+
     }
 
     if (mobileMenuBtn && mobileMenu) {
@@ -27,6 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenuBtn.addEventListener('click', (e) => {
             e.stopPropagation(); // Prevent click from bubbling to document
             toggleMenu();
+            console.log("menuıcoon", menuIcon.getAttribute("href"));
+            console.log("hrefff", menuIcon.getAttribute("href").split('#')[0]);
         });
 
         // Close menu when clicking on mobile navigation links
@@ -83,8 +90,11 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.add('active');
         });
     }
-    console.log("menuıcoon", menuIcon.getAttribute("href"));
+    //console.log("menuıcoon", menuIcon.getAttribute("href"));
+    
 });
 
 
 console.log('header.js loaded');
+
+
