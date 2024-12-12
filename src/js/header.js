@@ -5,20 +5,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const menuIcon = document.querySelector('.mobile-menu-icon use');
     const body = document.body;
 
+
+    
+
     function toggleMenu() {
         const isOpen = mobileMenu.classList.contains('is-open');
-        
+        const svgHref = menuIcon.getAttribute("href").split('#')[0];
         // Toggle menu visibility
         mobileMenu.classList.toggle('is-open');
         mobileMenuBtn.setAttribute('aria-expanded', !isOpen);
         
         // Toggle menu icon
         menuIcon.setAttribute('href', 
-            isOpen ? './img/icons.svg#icon-menu' : './img/icons.svg#icon-close'
+            //isOpen ? './img/icons.svg#icon-menu' : './img/icons.svg#icon-close'
+            isOpen ? svgHref+'#icon-menu' : svgHref+'#icon-close'
         );
+        
         
         // Toggle body scroll
         body.style.overflow = isOpen ? '' : 'hidden';
+
     }
 
     if (mobileMenuBtn && mobileMenu) {
@@ -82,4 +88,9 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.add('active');
         });
     }
+    
 });
+
+
+
+
