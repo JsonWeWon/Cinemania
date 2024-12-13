@@ -54,7 +54,7 @@ function setHeroBackground(movie) {
 }
 
 fetchMovies(BASE_URL, ENDPOINTS.POPULAR_MOVIES, { page: 1 }).then(data => {
-  console.log(data); //buildden sonra sil
+  // console.log(data); //buildden sonra sil
   const randomNumber = Math.floor(Math.random() * 20);
   const movie = data.results[randomNumber];
   const movieId = movie.id;
