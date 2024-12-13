@@ -157,12 +157,3 @@ function renderStarRating(rating, containerElement) {
     containerElement.appendChild(starElement.firstElementChild);
   }
 }
-
-// window.addEventListener('resize', () => {
-//   fetchMovies(BASE_URL, ENDPOINTS.POPULAR_MOVIES, { page: 1 }).then(data => {
-//     const randomNumber = Math.floor(Math.random() * 20);
-//     const movie = data.results[randomNumber];
-
-//     setHeroBackground(movie);
-//   });
-// });
