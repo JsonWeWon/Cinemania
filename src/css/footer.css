@@ -2,7 +2,7 @@
 @media only screen and (min-width: 1280px) {
 
     .footer {
-        background-color: #111111;
+        /* background-color: #111111; */
         padding: 2rem 0;
         text-align: center;
         margin-top: auto;
@@ -17,13 +17,13 @@
 }
 
 .copyright {
-    color: #6c757d;
+    color: #000000;
     margin: 0 0 0.5rem 0;
     font-size: 0.9rem;
 }
 
 .credit {
-    color: #6c757d;
+    color: #000000;
     margin: 0;
     font-size: 0.9rem;
 }
@@ -244,6 +244,29 @@
     background: #e65c00;
 }
 
+.footer-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+    font-size: 0.9rem;
+    color: #000000;
+}
+
+.dark-theme .footer-text {
+    color: #ffffff; /* Dark Mode için beyaz yazı */
+}
+
+.separator {
+    margin: 0 0.5rem;
+    color: #000000;
+}
+
+
+.dark-theme .separator {
+    color: #ffffff; /* Ayracı da beyaz yap */
+}
 
 
 /* Styles for Tablet devices */
@@ -252,3 +275,10 @@
 }
 
 /* Styles for Mobile devices */
+@media (max-width: 768px) {
+    .footer-text {
+        display: block; /* Yazıları alt alta göstermek için */
+        text-align: center;
+        font-size: 12px;
+    }
+}

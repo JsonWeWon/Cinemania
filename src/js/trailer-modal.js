@@ -1,0 +1,72 @@
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Trailer modal script loaded');
+    
+    const modal = document.querySelector('.modal-trailer');
+    const closeBtn = modal.querySelector('.modal-trailer__close');
+    const watchTrailerBtn = document.querySelector('.hero-button-watchTrailer');
+    const iframe = modal.querySelector('.modal-trailer__video');
+
+    console.log('Elements found:', {
+        modal: !!modal,
+        closeBtn: !!closeBtn,
+        watchTrailerBtn: !!watchTrailerBtn,
+        iframe: !!iframe
+    });
+
+    function stopVideo() {
+        const videoSrc = iframe.src;
+        iframe.src = videoSrc;
+    }
+
+    function closeModal() {
+        console.log('Closing modal');
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        stopVideo();
+    }
+
+    function openModal() {
+        console.log('Opening modal');
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Event Listeners
+    if (watchTrailerBtn) {
+        watchTrailerBtn.addEventListener('click', (e) => {
+            console.log('Watch trailer button clicked');
+            e.preventDefault();
+            openModal();
+        });
+    }
+    
+    if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+            console.log('Close button clicked');
+            e.preventDefault();
+            closeModal();
+        });
+    }
+
+    if (modal) {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                console.log('Clicked outside modal');
+                closeModal();
+            }
+        });
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            console.log('Escape key pressed');
+            closeModal();
+        }
+    });
+
+    // Export for use in other modules if needed
+    window.trailerModal = {
+        open: openModal,
+        close: closeModal
+    };
+});
