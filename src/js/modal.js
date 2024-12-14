@@ -4,6 +4,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const libraryBtn = modal.querySelector('.modal-details__library-btn');
   let currentMovieId = null;
 
+  // Genre ID -> Genre Name map
+  const genreMap = {
+    28: 'Action',
+    12: 'Adventure',
+    16: 'Animation',
+    35: 'Comedy',
+    80: 'Crime',
+    99: 'Documentary',
+    18: 'Drama',
+    10751: 'Family',
+    14: 'Fantasy',
+    36: 'History',
+    27: 'Horror',
+    10402: 'Music',
+    9648: 'Mystery',
+    10749: 'Romance',
+    878: 'Science Fiction',
+    10770: 'TV Movie',
+    53: 'Thriller',
+    10752: 'War',
+    37: 'Western',
+  };
+
   // Close modal handlers
   function closeModal() {
     modal.classList.remove('active');
@@ -20,8 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Library management
   function isInLibrary(movieId) {
-    const library = JSON.parse(localStorage.getItem('movieLibrary') || '[]');
-    return library.includes(movieId);
+    const library = JSON.parse(localStorage.getItem('myLibrary')) || [];
+    return library.some(movie => movie.id === movieId);
   }
 
   function updateLibraryButton(movieId) {
@@ -32,23 +55,39 @@ document.addEventListener('DOMContentLoaded', () => {
     libraryBtn.dataset.action = isMovieInLibrary ? 'remove' : 'add';
   }
 
-  function toggleLibrary(movieId) {
-    const library = JSON.parse(localStorage.getItem('movieLibrary') || '[]');
-    const index = library.indexOf(movieId);
+  function toggleLibrary(movie) {
+    const library = JSON.parse(localStorage.getItem('myLibrary')) || [];
+    const index = library.findIndex(item => item.id === movie.id);
+
+    // Eğer genres dizisi varsa ve genre_ids yoksa, mapleme yap
+    if (movie.genres && !movie.genre_ids) {
+      movie.genre_ids = movie.genres.map(genre => genre.id);
+    }
+
+    // Eğer genre_ids varsa ve genres yoksa, mapleme yap
+    if (movie.genre_ids && !movie.genres) {
+      movie.genres = movie.genre_ids.map(id => ({
+        id,
+        name: genreMap[id] || 'Unknown',
+      }));
+    }
 
     if (index === -1) {
-      library.push(movieId);
+      // Yeni film ekle
+      library.push(movie);
     } else {
+      // Zaten varsa çıkar
       library.splice(index, 1);
     }
 
-    localStorage.setItem('movieLibrary', JSON.stringify(library));
-    updateLibraryButton(movieId);
+    localStorage.setItem('myLibrary', JSON.stringify(library));
+    updateLibraryButton(movie.id);
   }
 
-  libraryBtn.addEventListener('click', () => {
+  libraryBtn.addEventListener('click', async () => {
     if (currentMovieId) {
-      toggleLibrary(currentMovieId);
+      const movieData = await fetchMovieDetails(currentMovieId);
+      toggleLibrary(movieData);
     }
   });
 

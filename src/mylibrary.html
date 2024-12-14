@@ -8,24 +8,51 @@
     <link rel="stylesheet" href="./styles.css" />
 
     <script type="module" defer src="./js/trailer-modal.js"></script>
-    
   </head>
   <body>
-    <load src="./partials/header.html" />
+    <load src="./partials/header.html"></load>
 
     <main>
-      <load src="./partials/hero.html" />
+      <load src="./partials/hero.html"></load>
 
-      <load src="./partials/library-list.html" />
+      <!-- Genre Dropdown -->
+      <div id="genre-dropdown-container">
+        <select id="genre-dropdown">
+          <option value="">Select Genre...</option>
+          <option value="all">All Genres</option>
+          <option value="28">Action</option>
+          <option value="12">Adventure</option>
+          <option value="16">Animation</option>
+          <option value="35">Comedy</option>
+          <option value="80">Crime</option>
+          <option value="99">Documentary</option>
+          <option value="18">Drama</option>
+          <option value="10751">Family</option>
+          <option value="14">Fantasy</option>
+          <option value="36">History</option>
+          <option value="27">Horror</option>
+          <option value="10402">Music</option>
+          <option value="9648">Mystery</option>
+          <option value="10749">Romance</option>
+          <option value="878">Science Fiction</option>
+          <option value="10770">TV Movie</option>
+          <option value="53">Thriller</option>
+          <option value="10752">War</option>
+          <option value="37">Western</option>
+        </select>
+      </div>
+
+      <!-- Library List -->
+      <load src="./partials/library-list.html"></load>
     </main>
 
-    <load src="./partials/footer.html" />
+    <load src="./partials/footer.html"></load>
 
-    <load src="./partials/modal-details.html" />
-    <load src="./partials/modal-trailer.html" />
-    <load src="./partials/modal-team.html" />
+    <load src="./partials/modal-details.html"></load>
+    <load src="./partials/modal-trailer.html"></load>
+    <load src="./partials/modal-team.html"></load>
 
-
+    <!-- Script for loading partials -->
     <script>
       document.querySelectorAll('load').forEach(el => {
         const src = el.getAttribute('src');
@@ -40,9 +67,9 @@
             .catch(err => console.error('Error loading:', src, err));
         }
       });
-
     </script>
-    
+
+    <!-- JavaScript Modules -->
     <script type="module" src="./js/library.js"></script>
     <script type="module" src="./js/theme.js"></script>
     <script type="module" src="./main.js"></script>
