@@ -36,7 +36,7 @@ async function loadMovies() {
     const catalogItems = data.results.slice(0, 3).map(item => {
 
       return `
-        <li class="catalog-item">
+        <li class="catalog-item" id="catalog-item-weekly">
           <img class="catalog-img" src="${IMG_BASE_URL}/w500${item.poster_path}" alt="${item.title}">
           <div class="catalog-info">
             <h2 class="catalog-title">${item.title}</h2>
@@ -54,32 +54,39 @@ async function loadMovies() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const movieCard = document.querySelector('.movie-card');
-    
-    // Sample movie data (you would typically get this from your API)
-    const sampleMovieData = {
-        id: "123",
-        title: "Red One",
-        poster: "./img/card.png",
-        vote: "6.8",
-        votes: "317",
-        popularity: "1231.7",
-        genre: "Comedy Action Fantasy",
-        about: "After Santa Claus (codename: Red One) is kidnapped, the North Pole's Head of Security must team up with the world's most infamous tracker in a globe-trotting, action-packed mission to save Christmas."
-    };
-
-    // Add click handler to movie card
-    movieCard.addEventListener('click', () => {
-        // Show modal with movie data
-        window.movieModal.show(sampleMovieData);
-    });
-
-    // Add hover effect
-    movieCard.style.cursor = 'pointer';
-});
-
 loadMovies();
+document.addEventListener('DOMContentLoaded', () => {
+
+  const weeklyCard = document.querySelector("#weekly-movie-card");
+  let  heroMovieData = {}
+  const movies = fetchMovies();
+  movies.then((movie) => {
+    console.log("weekly movie", movie.results[0].title)
+
+    // Sample movie data for hero section using hero image
+   heroMovieData = {
+    id: "hero_123",
+    title: `${movie.results.title}`,
+    poster: "./img/hero-desktop.png", // Using hero image
+    vote: "7.3",
+    votes: "486",
+    popularity: "1654.8",
+    genre: "Action Romance Comedy",
+    about: "Salt-of-the-earth Cole falls head over heels for enigmatic Sadie — but then makes the shocking discovery that she's a secret agent. Before they can decide on a second date, Cole and Sadie are swept away on an international adventure to save the world."
+};
+});
+  
+  
+  
+
+
+
+  weeklyCard.addEventListener('click', () => {
+  
+    window.movieModal.show(heroMovieData);
+
+  });
+});
 
 console.log("weeklyjs loaded");
 

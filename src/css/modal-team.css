@@ -1,10 +1,10 @@
 /* Styles for always visible */
 .dark-theme .modal.active .modal-content {
-    background-color: #ffffff;
+    background-color: black ;
 }
 
 .modal.active .modal-content {
-    background-color: #000000;
+    background-color: white;
 }
 
 .dark-theme .modal-header h2 {
