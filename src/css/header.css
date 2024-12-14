@@ -73,7 +73,6 @@
     z-index: 102;
     position: absolute;
     right: 0;
-    top:0;
 }
 
 /* Mobile Menu Button */
@@ -299,6 +298,16 @@
         width: 62%;
         gap: 32px;
     }
+
+    /* Header Controls */
+    .header-controls {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        z-index: 102;
+        position: absolute;
+        right: 0;
+    }
 }
 
 /* Desktop styles */
@@ -316,7 +325,7 @@
         width: 56%;
         gap: 32px;
     }
-}
+
 
 /* Mobile styles */
 @media screen and (max-width: 767px) {
@@ -350,6 +359,7 @@
 
     .header-controls {
         gap: 8px;
+        top: 0;
     }
 
     .mobile-nav-link {
