@@ -4,6 +4,8 @@ import {
   ENDPOINTS,
   IMG_BASE_URL,
 } from './fetchMovies.js';
+
+
 const heroItemElement = document.querySelector('#heroImg');
 const heroItemTitle = document.querySelector('.hero-h1');
 const starContainer = document.querySelector('.hero-rating-stars');
@@ -79,9 +81,9 @@ fetchMovies(BASE_URL, ENDPOINTS.POPULAR_MOVIES, { page: 1 }).then(data => {
       if (officialTrailer) {
         const youtubeUrl = `https://www.youtube.com/watch?v=${officialTrailer.key}`;
         heroButtonWatchTrailer.href = youtubeUrl;
-        heroButtonWatchTrailer.addEventListener('click', () => {
-          window.open(youtubeUrl, '_blank');
-        });
+        // heroButtonWatchTrailer.addEventListener('click', () => {
+        //   window.open(youtubeUrl, '_blank');
+        // });
       } else {
         console.log('No official YouTube trailer found.');
       }

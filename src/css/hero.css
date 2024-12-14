@@ -130,7 +130,6 @@
 /* Button Styles */
 .hero-button-watchTrailer {
   background: var(--linear-to-top);
-  transition: background 0.3s ease-in-out;
 }
 
 .hero-button-watchTrailer:hover {
@@ -151,6 +150,7 @@
   width: 117px;
   height: 38px;
   margin: 0;
+  background-color: var(--white-color);
 }
 
 .hero-button-moreDetails {
