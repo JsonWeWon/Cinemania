@@ -1,6 +1,15 @@
-/* Root styles */
-@import url('./css/root.css');
-@import url('./css/reset.css');
+/**
+  |============================
+  | include css partials with
+  | default @import url()
+  |============================
+*/
+/* Common styles */
+@import url('../src/css/reset.css');
+@import url('../src/css/root.css');
+@import url('../src/css/header.css');
+@import url('../src/css/footer.css');
+
 
 /* Components */
 @import url('./css/container.css');
@@ -18,6 +27,9 @@
 @import url('./css/library-list.css');
 @import url('./css/pagination.css');
 @import url('./css/scroll-to-top.css');
+/* Pagination styles */
+@import url('../src/css/pagination.css');
+
 
 /* Default dark theme styles */
 :root {
@@ -47,3 +59,4 @@ body {
 .light-theme body {
     background-color: #ffffff;
 }
+
