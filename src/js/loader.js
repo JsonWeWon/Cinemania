@@ -1,6 +1,5 @@
 const loaderEl = document.querySelector('.loader');
-// Start loader
-loaderInit();
+
 
 window.onload = () => {
   loaderEl.classList.remove('loader--shown');
@@ -15,3 +14,6 @@ function loaderInit() {
   document.body.style.overflow = 'hidden';
   document.body.style.paddingRight = `${scrollBarWidth}px`;
 }
+
+// Start loader
+loaderInit();
