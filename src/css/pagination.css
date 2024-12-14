@@ -25,6 +25,10 @@
   transition: background-color 0.3s ease;
 }
 
+.light-theme .pagination-button {
+  color: var(--black-color);
+}
+
 .pagination-button:hover,
 .pagination-button:focus {
   background-color: var(--accent-color);
