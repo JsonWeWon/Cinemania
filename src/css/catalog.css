@@ -3,7 +3,6 @@
 /* Catalog Section CSS */
 .catalog-film-section {
   padding-top: 16px;
-  background-color: var(--page-background-dark);
   transition: background-color var(--transition);
   max-width: 1280px;
   margin: 0 auto;
