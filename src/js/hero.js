@@ -5,6 +5,9 @@ import {
   IMG_BASE_URL,
 } from './fetchMovies.js';
 
+import "./weekly.js";
+import "./upcoming.js";
+
 
 const heroItemElement = document.querySelector('#heroImg');
 const heroItemTitle = document.querySelector('.hero-h1');
