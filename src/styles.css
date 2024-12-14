@@ -7,6 +7,7 @@
 /* Common styles */
 @import url('../src/css/reset.css');
 @import url('../src/css/root.css');
+@import url('../src/css/loader.css');
 @import url('../src/css/header.css');
 @import url('../src/css/footer.css');
 
