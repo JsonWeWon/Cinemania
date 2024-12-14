@@ -8,6 +8,7 @@ import {
 import "./weekly.js"
 import "./upcoming.js"
 import "./loader.js"
+import "./scroll-to-top.js";
 
 const heroItemElement = document.querySelector('#heroImg');
 const heroItemTitle = document.querySelector('.hero-h1');

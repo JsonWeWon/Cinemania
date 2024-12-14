@@ -26,3 +26,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial check for button visibility
     toggleScrollButton();
 });
+
