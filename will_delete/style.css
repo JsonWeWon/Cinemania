@@ -1,53 +1,51 @@
-/* Styles for Desktop devices */
-@media only screen and (min-width: 1280px) {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    .footer {
-      padding: 2rem 0;
-      text-align: center;
-      color: #ffffff;
-    }
-  
-    .footer-content {
-      display: flex;
-      justify-content: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 50px 50px;
-      gap: 10px;
-    }
-  }
-  
-  .footer-content {
-    padding: 36px 36px;
-  }
-  .footer-content-text {
-    font-family: var(--font-family);
-    color: var(--grey);
-    font-weight: 400;
-    font-size: 16px;
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Footer Styles */
+.footer {
+    background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    padding: 2rem 0;
+    border-top: 1px solid #dee2e6;
     text-align: center;
-  }
-  
-  .copyright {
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.copyright {
     color: #6c757d;
     margin: 0 0 0.5rem 0;
     font-size: 0.9rem;
-  }
-  
-  .credit {
+}
+
+.credit {
     color: #6c757d;
     margin: 0;
     font-size: 0.9rem;
-  }
-  
-  .heart {
-    color: #f87719;
+}
+
+.heart {
+    color: #F87719;
     display: inline-block;
     animation: heartbeat 1.5s ease infinite;
-  }
-  
-  .author-link {
-    color: #f87719;
+}
+
+.author-link {
+    color: #F87719;
     text-decoration: none;
     transition: all 0.3s ease;
     font-weight: 500;
@@ -55,14 +53,14 @@
     position: relative;
     padding: 2px 4px;
     cursor: pointer;
-  }
-  
-  .author-link:hover {
+}
+
+.author-link:hover {
     color: #e65c00;
     transform: translateY(-2px);
-  }
-  
-  .author-link::after {
+}
+
+.author-link::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -73,15 +71,15 @@
     transform: scaleX(0);
     transform-origin: bottom right;
     transition: transform 0.3s ease;
-  }
-  
-  .author-link:hover::after {
+}
+
+.author-link:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
-  }
-  
-  /* Modal Styles */
-  .modal {
+}
+
+/* Modal Styles */
+.modal {
     display: none;
     position: fixed;
     top: 0;
@@ -94,14 +92,14 @@
     z-index: 1000;
     opacity: 0;
     transition: opacity 0.3s ease;
-  }
-  
-  .modal.active {
+}
+
+.modal.active {
     display: flex;
     opacity: 1;
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
     background: white;
     border-radius: 15px;
     padding: 2rem;
@@ -112,13 +110,13 @@
     position: relative;
     transform: scale(0.7);
     transition: transform 0.3s ease;
-  }
-  
-  .modal.active .modal-content {
+}
+
+.modal.active .modal-content {
     transform: scale(1);
-  }
-  
-  .close-button {
+}
+
+.close-button {
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -128,144 +126,130 @@
     cursor: pointer;
     color: #6c757d;
     transition: color 0.3s ease;
-  }
-  
-  .close-button:hover {
-    color: #f87719;
-  }
-  
-  .modal-header {
+}
+
+.close-button:hover {
+    color: #F87719;
+}
+
+.modal-header {
     text-align: center;
     margin-bottom: 2rem;
-  }
-  
-  .modal-header h2 {
+}
+
+.modal-header h2 {
     color: #333;
     font-size: 2rem;
-  }
-  
-  /* Team Grid Styles */
-  .team-grid {
+}
+
+/* Team Grid Styles */
+.team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     padding: 1rem;
-  }
-  
-  .team-member {
+}
+
+.team-member {
     background: #f8f9fa;
     border-radius: 10px;
     overflow: hidden;
     transition: all 0.3s ease;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .team-member:hover {
+}
+
+.team-member:hover {
     transform: translateY(-10px);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  .member-image {
+}
+
+.member-image {
     width: 100%;
     height: 250px;
     object-fit: cover;
     transition: transform 0.3s ease;
-  }
-  
-  .team-member:hover .member-image {
+}
+
+.team-member:hover .member-image {
     transform: scale(1.1);
-  }
-  
-  .member-info {
+}
+
+.member-info {
     padding: 1.5rem;
     text-align: center;
-  }
-  
-  .member-name {
+}
+
+.member-name {
     color: #333;
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
-  }
-  
-  .member-role {
-    color: #f87719;
+}
+
+.member-role {
+    color: #F87719;
     font-size: 0.9rem;
     margin-bottom: 1rem;
-  }
-  
-  .social-links {
+}
+
+.social-links {
     display: flex;
     justify-content: center;
     gap: 1rem;
-  }
-  
-  .social-link {
+}
+
+.social-link {
     color: #6c757d;
     text-decoration: none;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
-  }
-  
-  .social-link:hover {
-    color: #f87719;
+}
+
+.social-link:hover {
+    color: #F87719;
     transform: translateY(-3px);
-  }
-  
-  .social-icon {
+}
+
+.social-icon {
     width: 24px;
     height: 24px;
     fill: currentColor;
-  }
-  
-  /* Animations */
-  @keyframes heartbeat {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
+}
+
+/* Animations */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
     .modal-content {
-      padding: 1rem;
+        padding: 1rem;
     }
-  
+
     .team-grid {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
     }
-  }
-  
-  /* Scrollbar Styling */
-  .modal-content::-webkit-scrollbar {
+}
+
+/* Scrollbar Styling */
+.modal-content::-webkit-scrollbar {
     width: 8px;
-  }
-  
-  .modal-content::-webkit-scrollbar-track {
+}
+
+.modal-content::-webkit-scrollbar-track {
     background: #f1f1f1;
     border-radius: 4px;
-  }
-  
-  .modal-content::-webkit-scrollbar-thumb {
-    background: #f87719;
-    border-radius: 4px;
-  }
-  
-  .modal-content::-webkit-scrollbar-thumb:hover {
-    background: #e65c00;
-  }
-  
-  /* Styles for Tablet devices */
-  @media only screen and (min-width: 768px) {
-  }
-  
-  /* Styles for Mobile devices */
-  
+}
 
+.modal-content::-webkit-scrollbar-thumb {
+    background: #F87719;
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: #e65c00;
+}

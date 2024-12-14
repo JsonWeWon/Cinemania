@@ -1,3 +1,4 @@
+
 import './js/weekly';
 import './js/footer';
 import './js/header';
@@ -11,3 +12,6 @@ import './js/catalog';
 import './js/theme';
 import './js/search';
 import './js/fetchMovies';
+import './js/trailer-modal'
+import './js/scroll-to-top'
+
