@@ -15,4 +15,5 @@ import './js/fetchMovies';
 import './js/trailer-modal.js';
 import './js/scroll-to-top';
 import './js/weekly';
+import './js/loader';
 

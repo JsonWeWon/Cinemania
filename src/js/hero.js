@@ -7,6 +7,7 @@ import {
 
 import "./weekly.js"
 import "./upcoming.js"
+import "./loader.js"
 
 const heroItemElement = document.querySelector('#heroImg');
 const heroItemTitle = document.querySelector('.hero-h1');
@@ -16,6 +17,8 @@ const moreDetailsBtn = document.querySelector('.hero-button-moreDetails');
 const heroButtonWatchTrailer = document.querySelector(
   '.hero-button-watchTrailer'
 );
+
+
 
 // Movie ID to fetch details
 let heroMovieId = null;
