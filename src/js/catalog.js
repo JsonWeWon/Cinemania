@@ -1,6 +1,9 @@
-// catalog.js
-
-import { fetchMovies, BASE_URL, ENDPOINTS } from './fetchMovies.js';
+import {
+  fetchMovies,
+  BASE_URL,
+  ENDPOINTS,
+  IMG_BASE_URL,
+} from './fetchMovies.js';
 import { initPagination } from './pagination.js';
 
 const movieListContainer = document.getElementById('movie-list');
@@ -42,6 +45,38 @@ function getReleaseYear(releaseDate) {
   return releaseDate ? releaseDate.split('-')[0] : '';
 }
 
+// Render movies in catalog
+function renderMovies(movies) {
+  movieListContainer.innerHTML = '';
+
+  movies.forEach(movie => {
+    const movieCard = document.createElement('div');
+    movieCard.className = 'catalog-item';
+    movieCard.id = `catalog-movie-${movie.id}`; // Assign unique ID
+    movieCard.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`;
+
+    const genresString = getGenreNames(movie.genre_ids);
+    const releaseYear = getReleaseYear(movie.release_date);
+    const infoText = `${genresString}${releaseYear ? ` | ${releaseYear}` : ''}`;
+
+    movieCard.innerHTML = `
+            <div class="catalog-card-info-container">
+                <h3 class="catalog-card-title">${movie.title}</h3>
+                <p class="catalog-card-description">${infoText}</p>
+                <p class="rating">⭐ ${movie.vote_average.toFixed(1)}</p>
+            </div>
+        `;
+
+    movieListContainer.appendChild(movieCard);
+
+    // Add click event to open modal
+    movieCard.addEventListener('click', () => {
+      window.movieModal.show(movie.id); // Pass movie ID to modal
+    });
+  });
+}
+
+// Load trending movies into catalog
 async function loadTrendingMovies() {
   try {
     const data = await fetchMovies(BASE_URL, ENDPOINTS.TRENDING_WEEK);
@@ -58,29 +93,8 @@ async function loadTrendingMovies() {
   }
 }
 
-function renderMovies(movies) {
-  movieListContainer.innerHTML = '';
-
-  movies.forEach(movie => {
-    const movieCard = document.createElement('div');
-    movieCard.className = 'catalog-item';
-    movieCard.style.backgroundImage = `url(https://image.tmdb.org/t/p/w500${movie.poster_path})`;
-
-    const genresString = getGenreNames(movie.genre_ids);
-    const releaseYear = getReleaseYear(movie.release_date);
-    const infoText = `${genresString}${releaseYear ? ` | ${releaseYear}` : ''}`;
-
-    movieCard.innerHTML = `
-      <div class="catalog-card-info-container">
-        <h3 class="catalog-card-title">${movie.title}</h3>
-        <p class="catalog-card-description">${infoText}</p>
-        <p class="rating">⭐ ${movie.vote_average.toFixed(1)}</p>
-      </div>
-    `;
-    movieListContainer.appendChild(movieCard);
-  });
-}
-
+// Initialize
 document.addEventListener('DOMContentLoaded', () => {
   initPagination();
+  loadTrendingMovies();
 });

@@ -1,5 +1,3 @@
-// pagination.js
-
 import axios from 'axios';
 
 const API_KEY = '016a30ce49a7789188b6fa9bad9963a6';
@@ -119,7 +117,13 @@ function renderMovies(movies) {
         <p class="rating">⭐ ${movie.vote_average.toFixed(1)}</p>
       </div>
     `;
+
     movieList.appendChild(card);
+
+    // Add click event for modal
+    card.addEventListener('click', () => {
+      window.movieModal.show(movie.id); // Pass movie ID to modal
+    });
   });
 }
 
