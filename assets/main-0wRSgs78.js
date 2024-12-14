@@ -28,4 +28,4 @@ import{a as N}from"./vendor-N5iQpiFS.js";(function(){const t=document.createElem
                 <p class="rating">⭐ ${t.vote_average.toFixed(1)}</p>
             </div>
         `,A.appendChild(o),o.addEventListener("click",()=>{window.movieModal.show(t.id)})})}async function we(){try{const e=await b(E,v.TRENDING_WEEK);e.results&&e.results.length>0?(be(e.results),$.style.display="none"):(A.innerHTML="",$.style.display="block")}catch(e){console.error("Error fetching movies:",e),$.style.display="block"}}document.addEventListener("DOMContentLoaded",()=>{me(),we()});document.addEventListener("DOMContentLoaded",()=>{const e=document.querySelector(".scroll-to-top"),t=100;function o(){window.scrollY>t?e.classList.add("visible"):e.classList.remove("visible")}function n(){window.scrollTo({top:0,behavior:"smooth"})}window.addEventListener("scroll",o),e.addEventListener("click",n),o()});
-//# sourceMappingURL=main-N8Bmvl57.js.map
+//# sourceMappingURL=main-0wRSgs78.js.map
