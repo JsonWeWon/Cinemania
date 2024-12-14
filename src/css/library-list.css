@@ -182,3 +182,31 @@
     width: 300px;
   }
 }
+/* Load More Button Styling */
+#load-more-container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.load-more-button {
+  background-color: var(--accent-color);
+  color: var(--white-color);
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: var(--font-weight-medium);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.load-more-button:hover {
+  background-color: rgba(248, 119, 25, 0.9);
+  transform: scale(1.05);
+}
+
+.load-more-button:active {
+  background-color: rgba(248, 119, 25, 1);
+  transform: scale(1);
+}

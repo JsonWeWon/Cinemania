@@ -15,10 +15,9 @@
     <main>
       <load src="./partials/hero.html"></load>
 
-      <!-- Genre Dropdown -->
-      <div id="genre-dropdown-container">
+      <!-- Genre Dropdown (Başlangıçta gizli) -->
+      <div id="genre-dropdown-container" style="display: none">
         <select id="genre-dropdown">
-          <option value="">Select Genre...</option>
           <option value="all">All Genres</option>
           <option value="28">Action</option>
           <option value="12">Adventure</option>
@@ -44,6 +43,14 @@
 
       <!-- Library List -->
       <load src="./partials/library-list.html"></load>
+
+      <!-- Load More Button (Başlangıçta gizli) -->
+      <div
+        id="load-more-container"
+        style="text-align: center; margin-top: 20px; display: none"
+      >
+        <button id="load-more" class="load-more-button">Load More</button>
+      </div>
     </main>
 
     <load src="./partials/footer.html"></load>
