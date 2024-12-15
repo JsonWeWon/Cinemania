@@ -48,3 +48,25 @@
 .clear-button:hover {
   color: #333;
 }
+
+@media screen and (min-width: 768px) {
+
+  .search-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+    
+}
+
+@media screen and (min-width: 1280px) {
+  .search-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+}
