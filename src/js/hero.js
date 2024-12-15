@@ -32,7 +32,11 @@ function shortenText(text) {
   return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
 }
 
+// globaller
 let imgElement;
+let mobileImage;
+let tabletImage;
+let desktopImage;
 
 // Hero arka planını ve bilgileri ayarla
 function setHeroBackground(movie) {
