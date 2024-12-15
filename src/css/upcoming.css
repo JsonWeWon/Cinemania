@@ -1,3 +1,49 @@
+/*UPCOMING LİBRARY BUTTON CSS*/
+
+/* Library Button */
+.upcoming__library-btn {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px 24px;
+  border-radius: 74px;
+  border: 1px solid #f87719;
+  background: transparent;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.upcoming__library-btn:hover {
+  background: #f87719;
+}
+
+.light-theme .upcoming__library-btn {
+  color: #111111;
+}
+
+.upcoming__library-btn[data-action='remove'] {
+  background: #f87719;
+}
+
+.upcoming__library-btn[data-action='remove']:hover {
+  background: transparent;
+}
+
+
+
+
+
+
+
+
+
+/****************/
+
+
+
+
 /* Styles for Mobile devices */
 .upcoming {
   margin-top: 20px;
