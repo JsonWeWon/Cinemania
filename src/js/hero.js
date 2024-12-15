@@ -45,7 +45,7 @@ function setHeroBackground(movie) {
   } else {
     console.error('Image element not found.');
   }
-  
+
   imgElement.alt = movie.title;
 
   if (window.matchMedia('(max-width: 767px)').matches) {
@@ -85,6 +85,18 @@ fetchMovies(BASE_URL, ENDPOINTS.POPULAR_MOVIES, { page: 1 }).then(data => {
 moreDetailsBtn.addEventListener('click', () => {
   if (heroMovieId) {
     window.movieModal.show(heroMovieId); // Pass hero movie ID to modal
+  }
+});
+
+window.addEventListener('resize', () => {
+  if (imgElement) {
+    if (window.innerWidth <= 768) {
+      imgElement.src = mobileImage;
+    } else if (window.innerWidth <= 1280) {
+      imgElement.src = tabletImage;
+    } else {
+      imgElement.src = desktopImage;
+    }
   }
 });
 
