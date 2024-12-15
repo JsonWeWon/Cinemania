@@ -31,18 +31,7 @@
   background: transparent;
 }
 
-
-
-
-
-
-
-
-
 /****************/
-
-
-
 
 /* Styles for Mobile devices */
 .upcoming {
@@ -148,10 +137,17 @@
 
 .vote {
   padding: 2px 6px;
-  background-color: #111;
-  color: #fff;
+  background-color: #f8f8f8;
+  color: #282828;
   border-radius: 4px;
   font-weight: 600;
+}
+.vote-second {
+  background-color: #f8f8f8;
+  color: #111111;
+}
+.dark-theme .vote-span {
+  color: #fff;
 }
 
 .upcoming-movie-title {
