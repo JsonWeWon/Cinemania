@@ -60,4 +60,4 @@ import{a as P}from"./vendor-N5iQpiFS.js";(function(){const t=document.createElem
                 <p class="rating">⭐ ${t.vote_average.toFixed(1)}</p>
             </div>
         `,N.appendChild(o),o.addEventListener("click",()=>{window.movieModal.show(t.id)})})}async function He(){try{const e=await b(w,E.TRENDING_WEEK);e.results&&e.results.length>0?(Ae(e.results),B.style.display="none"):(N.innerHTML="",B.style.display="block")}catch(e){console.error("Error fetching movies:",e),B.style.display="block"}}document.addEventListener("DOMContentLoaded",()=>{_e(),He()});
-//# sourceMappingURL=main-C-UNb0VO.js.map
+//# sourceMappingURL=main-qe3xlWDf.js.map
