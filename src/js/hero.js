@@ -32,6 +32,8 @@ function shortenText(text) {
   return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
 }
 
+let imgElement;
+
 // Hero arka planını ve bilgileri ayarla
 function setHeroBackground(movie) {
   const mobileImage = `${IMG_BASE_URL}/w500${movie.backdrop_path}`;
@@ -39,7 +41,7 @@ function setHeroBackground(movie) {
   const desktopImage = `${IMG_BASE_URL}/w1280${movie.backdrop_path}`;
 
   // Hero image container buradan
-  const imgElement = document.createElement('img');
+  imgElement = document.createElement('img');
   if (imgElement) {
     imgElement.classList.add('hero-image-itself');
   } else {
