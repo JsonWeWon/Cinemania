@@ -30,15 +30,14 @@
   width: 100%;
   padding: 40px 20px;
   border-radius: 16px;
+  overflow-y: auto;
+  max-height:90vh;
   background-color: var(--background);
   box-shadow: 0 0 20px rgba(248, 65, 25, 0.5);
   transform: scale(0.9);
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.modal-details.active .modal-details__container {
-  transform: scale(1);
-}
 .modal-close-btn {
   fill: #000000;
 }
