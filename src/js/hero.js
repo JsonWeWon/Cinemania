@@ -32,6 +32,12 @@ function shortenText(text) {
   return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
 }
 
+// globaller
+let imgElement;
+let mobileImage;
+let tabletImage;
+let desktopImage;
+
 // Hero arka planını ve bilgileri ayarla
 function setHeroBackground(movie) {
   const mobileImage = `${IMG_BASE_URL}/w500${movie.backdrop_path}`;
@@ -39,7 +45,7 @@ function setHeroBackground(movie) {
   const desktopImage = `${IMG_BASE_URL}/w1280${movie.backdrop_path}`;
 
   // Hero image container buradan
-  const imgElement = document.createElement('img');
+  imgElement = document.createElement('img');
   if (imgElement) {
     imgElement.classList.add('hero-image-itself');
   } else {
@@ -67,11 +73,13 @@ function setHeroBackground(movie) {
   heroMovieId = movie.id;
 }
 
+let movie;
+
 // Fetch hero movie data
 fetchMovies(BASE_URL, ENDPOINTS.POPULAR_MOVIES, { page: 1 }).then(data => {
   if (data.results && data.results.length > 0) {
     const randomNumber = Math.floor(Math.random() * 20);
-    const movie = data.results[randomNumber];
+    movie = data.results[randomNumber];
     heroSection.dataset.movieid = movie.id;
     const movieRating = movie.vote_average;
     renderStarRating(movieRating, starContainer);
@@ -91,11 +99,11 @@ moreDetailsBtn.addEventListener('click', () => {
 window.addEventListener('resize', () => {
   if (imgElement) {
     if (window.innerWidth <= 768) {
-      imgElement.src = mobileImage;
+      setHeroBackground(movie);
     } else if (window.innerWidth <= 1280) {
-      imgElement.src = tabletImage;
+      setHeroBackground(movie);
     } else {
-      imgElement.src = desktopImage;
+      setHeroBackground(movie);
     }
   }
 });
