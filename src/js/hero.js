@@ -19,10 +19,15 @@ const heroButtonWatchTrailer = document.querySelector(
   '.hero-button-watchTrailer'
 );
 
+const heroSection = document.querySelector('.hero');
+
+
 
 
 // Movie ID to fetch details
 let heroMovieId = null;
+
+let idDeneme = null;
 
 // Yazılar uzun olunca mobilde düğmeleri alta atmaması için bir kısaltma fonksiyonu
 function shortenText(text) {
@@ -61,6 +66,7 @@ fetchMovies(BASE_URL, ENDPOINTS.POPULAR_MOVIES, { page: 1 }).then(data => {
   if (data.results && data.results.length > 0) {
     const randomNumber = Math.floor(Math.random() * 20);
     const movie = data.results[randomNumber];
+    heroSection.dataset.movieid = movie.id;
     setHeroBackground(movie);
   } else {
     console.error('No movies found for hero section.');

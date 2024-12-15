@@ -1,5 +1,9 @@
+import { fetchMovies, BASE_URL, ENDPOINTS } from './fetchMovies.js';
+
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Trailer modal script loaded');
+
+    const heroTrailerId = document.querySelector(".hero");
     
     const modal = document.querySelector('.modal-trailer');
     const closeBtn = modal.querySelector('.modal-trailer__close');
@@ -29,6 +33,38 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Opening modal');
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
+
+        console.log("video api ", heroTrailerId.dataset.movieid)
+        //OFFICIAL TRAILER
+        fetchMovies(BASE_URL, `/movie/${heroTrailerId.dataset.movieid}/videos`, { page: 1 }).then(
+            videoData => {
+            console.log('VIDEO:', videoData);
+
+            const officialTrailer = videoData.results.find(
+                video =>
+                video.official === true &&
+                video.site === 'YouTube' &&
+                video.type === 'Trailer'
+            );
+
+            if (officialTrailer) {
+                const youtubeUrl = `https://www.youtube.com/embed/${officialTrailer.key}`;
+                console.log(iframe.src);
+                iframe.src = youtubeUrl;
+                console.log(iframe.src);
+                
+            } else {
+                console.log('No official YouTube trailer found.');
+            }
+            } );
+        
+        
+        // console.log("trailer data", deneme);
+        // iframe.src = `https://www.youtube.com/embed/${data.key}`;
+       
+
+        
+
     }
 
     // Event Listeners
